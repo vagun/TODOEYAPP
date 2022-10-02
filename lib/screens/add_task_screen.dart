@@ -1,8 +1,11 @@
-import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
 class AddTaskScreen extends StatelessWidget {
+  late String newtasktitle;
+  final Function addtaskcallback;
+  AddTaskScreen(this.addtaskcallback);
+  
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -25,13 +28,16 @@ class AddTaskScreen extends StatelessWidget {
             TextField(
               autofocus: true,
               textAlign: TextAlign.center,
+              onChanged: (newtext) {
+                newtasktitle=newtext;
+              },
             ),
             SizedBox(
               height: 20,
             ),
             TextButton(
               onPressed: () {
-                
+                addtaskcallback(newtasktitle);
               },
               child: Text(
                 'Add',

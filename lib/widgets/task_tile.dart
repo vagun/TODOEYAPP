@@ -4,15 +4,8 @@ class TaskTile extends StatelessWidget {
   final String tasktitle;
   final ValueChanged<bool?> checkboxCallback;
   TaskTile({required this.ischecked,required this.tasktitle,required this.checkboxCallback});
-
-  
-  
-  @override
-  
- 
-  
-  @override
-  Widget build(BuildContext context) {
+ @override
+   Widget build(BuildContext context) {
     return ListTile(
       title: Text(tasktitle,style: TextStyle(decoration: ischecked? TextDecoration.lineThrough:null),),
       trailing:  Checkbox(
